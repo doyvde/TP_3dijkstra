@@ -174,7 +174,7 @@ int main(){
     GRAPHE G;// declaration du graphe
     int matrice[MAX][MAX];//declaratio de la matrice
 
-    litGraphe("C:\\Users\\denis\\OneDrive\\Documents\\ECE ing 2\\TP_3\\graphe.txt", &G,matrice);// lecture du fichier et creation du graphe sous morme matricielle et de liste
+    litGraphe("graphe.txt", &G,matrice);// lecture du fichier et creation du graphe sous morme matricielle et de liste
     afficheGraphe(G);//affichage des donnes du graphe
 
     int n=G.nbSommets;//initialisation du monbre de sommet car necessaire dans le Dijkstra
