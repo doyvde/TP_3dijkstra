@@ -1,12 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
-
 #define NB_SOM_MAX 10 //nombre de sommets maximum
-
-// Dijkstra's Algorithm in C
-
 #define INFINITY 9999
 #define MAX 10
 
@@ -20,14 +15,11 @@ typedef struct maillon{
     int poids;
 } MAILLON, *LISTE;
 
-
 //graph structure
 typedef struct graphe{
     int nbSommets;
     LISTE Adj[NB_SOM_MAX]; //liste d'adjacence
 } GRAPHE;
-
-
 
 //insere (som_b,poids) en tete dans la liste d’adjacence Adj[som_a]
 void insere(int som_a, int som_b, int poids, LISTE Adj[]){
@@ -38,7 +30,6 @@ void insere(int som_a, int som_b, int poids, LISTE Adj[]){
     Adj[som_a] = prem;
 }
 
-
 //initialisation de la table d’adjacence : toutes les listes chainées sont vides
 void initAdjGraphe(GRAPHE *G){
     int i;
@@ -46,7 +37,6 @@ void initAdjGraphe(GRAPHE *G){
         G->Adj[i] = NULL;
     }
 }
-
 
 //pour charger un graphe a partir d’un fichier
 void litGraphe(const char *adr, GRAPHE *G ,int matrice[MAX][MAX]){
@@ -86,7 +76,6 @@ void litGraphe(const char *adr, GRAPHE *G ,int matrice[MAX][MAX]){
     fclose(f);
 }
 
-
 // affichage d’un graphe : le nombre de sommets, puischaque arc pondéré : (sommet_1, sommet_2, poids)
 void afficheGraphe(GRAPHE G){
     int j;
@@ -101,6 +90,7 @@ void afficheGraphe(GRAPHE G){
     }
 }
 
+// Dijkstra's Algorithm in C
 void Dijkstra(int Graph[MAX][MAX], int n, int start,int fin) {
   int cost[MAX][MAX], distance[MAX], pred[MAX];
   int visited[MAX], count, mindistance, nextnode, i, j;
@@ -170,6 +160,7 @@ void Dijkstra(int Graph[MAX][MAX], int n, int start,int fin) {
     //}
 }
 
+//main
 int main(){
     GRAPHE G;// declaration du graphe
     int matrice[MAX][MAX];//declaratio de la matrice
